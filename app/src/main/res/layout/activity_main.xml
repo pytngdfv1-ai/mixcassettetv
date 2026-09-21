@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="#121212"
+    android:padding="24dp">
+
+    <!-- MITAD IZQUIERDA: Módulo de Casete Retro -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="#1E1E1E"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MIXCASSETTE TV"
+            android:textColor="#FF9800"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Simulación visual del Casete -->
+        <FrameLayout
+            android:layout_width="320dp"
+            android:layout_height="200dp"
+            android:background="#333333"
+            android:padding="16dp">
+
+            <!-- Carrete Izquierdo -->
+            <ImageView
+                android:id="@+id/ivLeftSpool"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="start|center_vertical"
+                android:src="@android:drawable/ic_menu_rotate" />
+
+            <!-- Carrete Derecho -->
+            <ImageView
+                android:id="@+id/ivRightSpool"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="end|center_vertical"
+                android:src="@android:drawable/ic_menu_rotate" />
+        </FrameLayout>
+
+        <!-- Controles de Reproducción enfocables para Control Remoto -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="24dp">
+
+            <Button
+                android:id="@+id/btnPrev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&lt;&lt;"
+                android:focusable="true" />
+
+            <Button
+                android:id="@+id/btnPlayPause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PLAY / PAUSE"
+                android:focusable="true"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp" />
+
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&gt;&gt;"
+                android:focusable="true" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- MITAD DERECHA: Módulo Dinámico (Carátula / Letra Karaoke / Video) -->
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginStart="24dp"
+        android:background="#1E1E1E"
+        android:padding="16dp">
+
+        <!-- Vista de Letra Estilo Karaoke / Carátula -->
+        <TextView
+            android:id="@+id/tvLyrics"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Cargando letra y pistas...\n(Estilo Karaoke)"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textAlignment="center" />
+
+        <!-- Contenedor o vista para cuando se active el modo Video -->
+        <View
+            android:id="@+id/videoContainerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="#000000" />
+
+    </FrameLayout>
+
+</LinearLayout>
