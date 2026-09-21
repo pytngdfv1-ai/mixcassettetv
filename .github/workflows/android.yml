@@ -23,6 +23,8 @@ jobs:
 
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
+      with:
+        items: 'platforms;android-34,build-tools;34.0.0'
 
     - name: Download and Install Gradle 8.1.1
       run: |
@@ -40,3 +42,4 @@ jobs:
       with:
         name: mixcassettetv-debug-apk
         path: app/build/outputs/apk/debug/app-debug.apk
+        
