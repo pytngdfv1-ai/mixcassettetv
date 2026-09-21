@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.tuempresa.mixcassettetv' // Reemplaza con tu paquete real
+    namespace 'com.mixcassettetv'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.tuempresa.mixcassettetv"
+        applicationId "com.mixcassettetv"
         minSdk 21
         targetSdk 34
         versionCode 1
@@ -32,6 +32,7 @@ android {
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.core:core-ktx:1.12.0'
-    implementation 'androidx.leanback:leanback:1.2.0-alpha04' // Soporte para Android TV
+    implementation 'androidx.leanback:leanback:1.2.0-alpha04'
     implementation 'com.google.android.material:material:1.11.0'
+}
 }
