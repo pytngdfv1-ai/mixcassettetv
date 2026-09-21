@@ -24,10 +24,6 @@ jobs:
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
 
-    - name: Accept Android SDK licenses
-      run: |
-        yes | sdkmanager --licenses || true
-
     - name: Download and Install Gradle 8.1.1
       run: |
         wget -q https://services.gradle.org/distributions/gradle-8.1.1-bin.zip
