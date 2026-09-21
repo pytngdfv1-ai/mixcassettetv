@@ -1,3 +1,4 @@
+          
 name: Build Android APK
 
 on:
@@ -26,8 +27,14 @@ jobs:
           packages: 'platform-tools platforms;android-34 build-tools;34.0.0'
           accept-android-sdk-licenses: true
 
-      - name: Build Debug APK with Gradle
-        run: gradle assembleDebug --no-daemon
+      - name: Generate Gradle Wrapper
+        run: gradle wrapper
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Build Debug APK with Gradle Wrapper
+        run: ./gradlew assembleDebug --no-daemon
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
